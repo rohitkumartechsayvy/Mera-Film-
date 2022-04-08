@@ -1,0 +1,48 @@
+/* Padding - just for asthetics on Bootsnipp.com */
+body { margin-top:20px; }
+
+/* CSS for Credit Card Payment form */
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+.form-control.error {
+   border-color: red;
+   outline: 0;
+   box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+label.error {
+ font-weight: bold;
+ color: red;
+ padding: 2px 8px;
+ margin-top: 2px;
+}
+.payment-errors {
+ font-weight: bold;
+ color: red;
+ padding: 2px 8px;
+ margin-top: 2px;
+}
+
+.strip{
+
+  height: 40px;
+  width: auto;
+  border-radius: 10px 10px 10px 10px;
+  color: white;
+  background-color:  #476b6b;
+  font-family: Verdana, Geneva, sans-serif;
+  text-align: center;
+}
+
+.ppay{
+  text-align: center;
+vertical-align: middle;
+line-height: 40px;
+}
+
+
+.glowing-border:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}

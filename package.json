@@ -1,0 +1,39 @@
+{
+  "name": "Bookmoive",
+  "version": "1.0.0",
+  "description": "Book movie",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "karma start"
+  },
+  "author": "Rohit",
+  "license": "ISC",
+  "dependencies": {
+  "angular": "^1.5.8",
+    "angular-mocks": "^1.5.8",
+    "cookie-parser":"*",
+    "connect-flash":"*",
+    "angular-route": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "ejs": "~2.3.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.8",
+    "morgan": "~1.5.3",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
+    "express-session": "^1.14.0",
+    "express-validator": "^2.20.8"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "browserify": "^13.1.0",
+    "webpack": "^1.10.0",
+    "webpack-dev-middleware": "^1.2.0"
+  }
+}

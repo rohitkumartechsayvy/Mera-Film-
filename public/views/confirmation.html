@@ -1,0 +1,90 @@
+
+    <div class="container">
+      <br><br><br>
+	<div class="row">
+		<div class="col-md-12 alert alert-success" >
+			<h2>
+				<b><i style="font-size:24px;" class="fa">&#xf00c;  Thank you for purchase!</i></b>
+			</h2>
+
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4" >
+			<img  src="{{MyPoster}}" class="img-thumbnail">
+		</div>
+		<div class="col-md-4">
+			<h2>
+				{{mname}} (U/A)
+			</h2>
+			<p>
+				{{CinemaName}},{{city}}
+			</p>
+    	<p>
+				{{showTime}}
+			</p>
+      <p>
+        <b> Quantity: {{coutSeat}}</b>
+      </p>
+      <p>
+        <img alt="Seat" src="images/ticket.jpg" style="width:50px;height:50px;" class="img-thumbnail"><b>GOLD CLASS-</b><b ng-repeat="x in TotalSeat1">  {{x}} </b>
+      </p>
+    <table style="width:100%">
+      <tr>
+      <td><b>Ticket Price:</b></td>
+      <td><b>Rs.{{Amount}}</b></td>
+    </tr>
+    <tr>
+    <td><b>Internet handling fees:</b></td>
+    <td><b>Rs.{{coutSeat*40}}</b></td>
+  </tr>
+  </table>
+  <br>
+  <table style="width:100%">
+        <tr>
+      <td>
+        <font size="5px">Amount paid</font>
+      </td>
+      <td>
+      <font size="5px"> Rs.{{Amount}}+{{coutSeat*40}}</font>
+      </td>
+    </tr>
+  </table>
+		</div>
+		<div class="col-md-4">
+			<img alt="Barcode" src="images/barcode.png" style="width:125px;height:125px;">
+      <p>
+
+      </p>
+      <p>
+        BOOKING ID
+      </p>
+      </p>
+      <p>
+        <b>WW782358E</b>
+      </p>
+		</div>
+	</div>
+  <br>
+  <br>
+  <br>
+	<div class="row">
+		<div class="col-md-4">
+			<h5>
+				<b>BOOKING DATE & TIME</b>
+			</h5>
+			<p>
+       {{showTime}}
+			</p>
+		</div>
+		<div class="col-md-4">
+			<h5>
+      	<b>CONFIRMATION ID</b>
+			</h5>
+			<p>
+2589660
+			</p>
+		</div>
+	</div>
+</div>

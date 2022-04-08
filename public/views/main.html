@@ -1,0 +1,54 @@
+<style>
+.table > thead > tr > th {
+     vertical-align: middle;
+     text-align: center;
+}
+.table > tbody > tr > td {
+     vertical-align: middle;
+     text-align: center;
+}
+
+</style>
+
+<div class="container">
+<div class="row">
+    <div class="col-sm-4 col-lg-4">
+
+    </div>
+    <div class="col-sm-4 col-lg-4">
+
+  <label for="T_Name">Enter Theater Name</label>
+  <input class="form-control" id="tname" type="text" ng-model="post.T_Name">
+  <label for="T_City">Enter Theater City</label>
+  <input class="form-control" id="T_City" type="text" ng-model="post.T_City">
+  <label for="T_Area">Enter Theater Area</label>
+  <input class="form-control" id="T_Area" type="text" ng-model="post.T_Area">
+  <label></label>
+  <button type="button" class="btn btn-primary btn-block" ng-click="insertTheater()">Add Theater</button>
+    </div>
+    <div class="col-sm-4 col-lg-4">
+
+    </div>
+</div>
+<br>
+<table class="table table-bordered table-hover table-condensed cf table2">
+  <thead>
+    <tr>
+      <th>Theater Name</th>
+      <th>Theater City</th>
+      <th>Theater Area</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="p in postData">
+      <td>{{p.T_Name}}</td>
+      <td>{{p.T_City}}</td>
+      <td>{{p.T_Area}}</td>
+      <td><button ng-click="deletetheater(p)" class="glyphicon glyphicon-trash btn btn-danger"></button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>

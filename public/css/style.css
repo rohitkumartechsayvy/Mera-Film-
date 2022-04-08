@@ -1,0 +1,26 @@
+
+
+
+a{
+      font-size:large;
+      font-family: "Lucida Console", Monaco, monospace;
+}
+
+.table > thead > tr > th {
+     vertical-align: middle;
+     text-align: center;
+}
+.table > tbody > tr > td {
+     vertical-align: middle;
+     text-align: center;
+}
+.table1{
+font-family: "Comic Sans MS", cursive, sans-serif	;
+font-size: 120%;
+}
+
+.table2{
+font-family: "Courier New", Courier, monospace;
+font-size: 120%;
+
+}

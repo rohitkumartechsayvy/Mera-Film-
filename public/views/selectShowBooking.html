@@ -1,0 +1,39 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+
+
+Select City : <select ng-model="dataCity" >
+  <!-- <option>Select City</option> -->
+  <option ng-repeat="n in theaterShow | unique : 'T_City'">{{n.T_City}}<option>
+</select>
+Select Date<select ng-model="myDate">
+  <!-- <option>Select Date</option> -->
+  <option ng-repeat="x in movDates">{{x  | date:'dd, MMM yyyy'}}</option>
+</select>
+
+  <table class="table table-default" >
+    <thead>
+      <tr>
+        <th>Theater</th>
+        <th>Movie</th>
+        <th>City</th>
+        <th>Date</th>
+        <th></th>
+        <th>Show Timings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-show="myDate" ng-repeat="x in mappingData | filter:myDate | filter:dataCity |filter:Moviename">
+        <td>{{x.Cinema}}</td>
+        <td>{{x.Title}}</td>
+        <td>{{x.City}}</td>
+        <td>{{x.ShowDate | date:'dd, MMMM yyyy' }}</td>
+        <td ng-repeat="a in x.TimeSlot"><button type="button" class="btn btn-link" ng-click="showTimings(a,x)">{{a}}</button></td>
+      </tr>
+  </tbody>
+  </table>
+
+</div>
+</div>
+</div>

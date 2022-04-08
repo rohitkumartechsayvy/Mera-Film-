@@ -1,0 +1,93 @@
+<style>
+.table > thead > tr > th {
+     vertical-align: middle;
+     text-align: center;
+}
+.table > tbody > tr > td {
+     vertical-align: middle;
+     text-align: center;
+}
+
+</style>
+<div class="container">
+<div class="row">
+    <div class="col-sm-4 col-lg-4">
+
+    </div>
+    <div class="col-sm-4 col-lg-4">
+
+  <label for="M_Name">Movie Name To Be Searched</label>
+  <input class="form-control" id="M_Name" type="text" ng-model="M_Name">
+  <label for="M_Year">Year</label>
+  <input class="form-control" id="M_Year" type="text" ng-model="M_Year">
+  <label></label>
+  <button type="button" class="btn btn-primary btn-block " ng-click="searchOMDB()">Search</button>
+    </div>
+    <div class="col-sm-4 col-lg-4">
+
+    </div>
+</div>
+<br><br>
+<table class="table table-bordered table2">
+  <thead>
+    <tr>
+      <th>Movie Name</th>
+      <th>Movie Data</th>
+      <th>Actors</th>
+      <th>Release Year</th>
+      <th>Duration</th>
+      <th>Director</th>
+      <th>Language</th>
+      <th>Add Movie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <td>{{omdbData.Title}} </td>
+      <td><img src="{{omdbData.Poster}}" height="150" width="150"></td>
+      <td>{{omdbData.Actors}} </td>
+      <td>{{omdbData.Year}} </td>
+      <td>{{omdbData.Runtime}} </td>
+      <td>{{omdbData.Director}} </td>
+      <td>{{omdbData.Language}} </td>
+
+      <td><button ng-click="insertOMDBMovie()" > Add</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+      <table class="table table-bordered table-hover table-condensed cf table2">
+
+          <thead>
+            <tr>
+              <th>Movie Name</th>
+              <th>Poster</th>
+              <th>Actors</th>
+              <th>Release Year</th>
+              <th>Duration</th>
+              <th>Language</th>
+              <th>Action</th>
+            </tr>
+
+        </thead>
+        <tbody>
+<tr ng-repeat="p in movieShow">
+        <td>{{p.Title}} </td>
+          <td><img src="{{p.Poster}}" height="150" width="150"></td>
+
+            <td>{{p.Actors}} </td>
+            <td>{{p.Year}} </td>
+            <td>{{p.Runtime}} </td>
+            <td>{{p.Language}} </td>
+
+            <td><button ng-click="deletemovies(p)" class="glyphicon glyphicon-trash btn btn-danger"></button></td>
+
+          </tr>
+        </tbody>
+      </table>
+
+
+
+</div>

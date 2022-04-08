@@ -1,0 +1,160 @@
+<div class="container">
+<div class="row">
+
+<div class="col-md-3">
+
+</div>
+<div class="table-responsive">
+
+            <table class="col-md-6 table-hover table-condensed cf table1">
+            <tbody>
+              <tr>
+                <td>Select Movie </td>
+                <td>
+                <select name="moviename" ng-model="post.Title" style="width:85%">
+                  <option ng-repeat="p in movieShow" value="{{p.Title}}" >
+            {{p.Title}}
+                  </option>
+                </select>
+                </td>
+
+              </tr>
+
+              <tr>
+              <td>Select City </td>
+              <td>
+              <select name="city" ng-model="post.City" style="width:85%">
+                <option ng-repeat="t in theaterShow | unique : 'T_City'" value="{{t.T_City}}">
+              {{t.T_City}}
+                </option>
+              </select>
+
+              </td>
+              </tr>
+
+              <tr>
+              <td>Select Cinema</td>
+              <td>
+              <select name="cinema" ng-model="post.Cinema" style="width:85%">
+                <option ng-repeat="t in theaterShow | filter : post.City">
+              {{t.T_Name}}
+                </option>
+              </select>
+
+              </td>
+              </tr>
+
+              <tr>
+              <td>Date</td>
+              <td>
+          <!-- <input type ="text" ng-model="post.Date" id="datepicker" ng-click="datepic()"/></td> -->
+<input type="text" id="datepicker" ng-model="ShowDate"/>
+              </tr>
+
+              <tr>
+              <td>Timing</td>
+              <td>
+
+              <select name="hours" ng-model="Hour" ng-change="hourshowSelectValue(Hour)" style="width:25%">
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                <option>06</option>
+                <option>07</option>
+                <option>08</option>
+                <option>09</option>
+                <option>10</option>
+                <option>11</option>
+              </select>
+              <select ng-model="Minute" ng-change="minuteshowSelectValue(Minute)" style="width:25%">
+                <option>10</option>
+                <option>15</option>
+                <option>20</option>
+                <option>25</option>
+                <option>30</option>
+                <option>35</option>
+                <option>40</option>
+                <option>45</option>
+                <option>50</option>
+                <option>55</option>
+              </select>
+
+              <select ng-model="Am_Pm" ng-change="ampmhowSelectValue(Am_Pm)" style="width:25%">
+                <option>AM</option>
+                <option>PM</option>
+              </select>
+
+              <button type="button" name="button" ng-click="insertArray()" class="glyphicon glyphicon-plus btn btn-success"></button>
+              </td>
+              </tr>
+
+              <tr ng-repeat="ar in timeAr">
+                <td >
+            {{ar}}
+                </td>
+                <td>
+                  <button type="button" ng-click="removeArray($index)" class="glyphicon glyphicon-remove btn btn-danger"></button>
+                </td>
+
+
+<tr>
+  <td>
+
+  </td>
+  <td>
+  <button type="button" name="button" ng-click="insertMapping()" class="btn btn-success"  >Submit</button>
+  </td>
+
+</tr>
+                    </tr>
+
+
+            </tbody>
+          </table>
+
+</div>
+
+        <div class="col-md-3">
+
+        </div>
+</div>
+<br>
+<hr>
+<br>
+<div class="row">
+
+<div class="table-responsive">
+  <table class="table table-hover table-condensed cf table2" >
+    <thead class="cf">
+      <tr>
+        <th>Action</th>
+        <th>Theater</th>
+        <th>Movie</th>
+        <th>City</th>
+        <th>Show Date</th>
+        <th>
+        </th>
+        <th>Show Timings</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in mapData">
+        <td class="active">
+          <button type="button" name="button" class="glyphicon glyphicon-trash btn btn-danger" ng-click="deleteTheaterMovies(x)"></button>
+        </td>
+        <td>{{x.Cinema}}</td>
+        <td>{{x.Title}}</td>
+        <td>{{x.City}}</td>
+        <td>{{x.ShowDate}}</td>
+        <td ng-repeat="a in x.TimeSlot">{{a}}</td>
+      </tr>
+  </tbody>
+  </table>
+</div>
+</div>
+</div>

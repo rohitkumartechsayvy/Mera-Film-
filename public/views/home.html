@@ -1,0 +1,120 @@
+<style>
+
+
+	/*---------------------------------------*/
+#wrapper .text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+}
+a:hover {
+font-weight: bold;
+font-size: 18px;
+}
+
+	hr {
+		display: block;
+		margin-top: 0%;
+	margin-bottom: 0%;
+	margin-right: 50px;
+	border-width: 3px;
+	border-color: #c2c2a3 ;
+  border-style: solid groove;
+}
+
+
+p{
+	margin-right: 20px;
+}
+</style>
+<!-- Carouselstart -->
+<div class="container-fluid">
+<div class ="row">
+<div class="col-lg-12">
+
+
+				<div class="carousel slide" id="carousel-729274">
+					<ol class="carousel-indicators">
+						<li class="active" data-slide-to="0" data-ride="carousel" data-target="#carousel-729274">
+						</li>
+						<li data-slide-to="1" data-target="#carousel-729274">
+						</li>
+						<li data-slide-to="2" data-target="#carousel-729274">
+						</li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<img style="height:500px;" alt="Carousel Bootstrap First" src="/images/p1.jpg" />
+							<div class="carousel-caption">
+
+							</div>
+						</div>
+						<div class="item">
+							<img style="height:500px;" alt="Carousel Bootstrap Second" src="/images/p2.jpg" />
+							<div class="carousel-caption">
+							</div>
+						</div>
+						<div class="item">
+							<img style="height:500px;" alt="Carousel Bootstrap Third" src="/images/p3.jpg" />
+							<div class="carousel-caption">
+
+							</div>
+						</div>
+					</div>
+            <a class="left carousel-control" data-target="#carousel-729274" ng-non-bindable data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+         <a class="right carousel-control" data-target="#carousel-729274" ng-non-bindable data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
+			</div>
+
+</div>
+<br/><br/>
+<!-- from here moviedata extracted -->
+<div ng-init="loopvar=0"></div>
+
+<div class="row">
+
+	<div class="col-sm-3" ng-repeat="m in movieShow | filter : {Status:'true'}">
+
+
+
+
+		<div class="card">
+			<div class="card-header">
+    <h3>{{m.Title}}</h3>
+  </div>
+		  <img class="card-img-top" src="{{m.Poster}}" alt="Card image cap">
+		  <div class="card-block">
+		    <p class="card-text">
+				Language :	{{m.Language}}<br>
+        Type : {{m.Genre}}
+				</p>
+
+		<button ng-click="reviewDataMove(m.Title,m.Poster)" class="btn btn-link pull-right">Review & Rate</a>
+			<button ng-click="timeTable(m.Title,m.Poster)" class="btn btn-primary btn-block" style="width:255px;">BOOK NOW</button>
+		  </div>
+		</div>
+
+		<!-- <img src="{{m.Poster}}" alt="POSTER" width="255" height="240" style="border-radius:20px"> -->
+		<!-- <div class="booktab">
+		<p>Movie : {{m.Title}} </p>
+
+	{{overallrating[count]}}
+
+		<hr>
+		Language : {{m.Language}}<br/>
+			Type : {{m.Genre}}<br>
+			<div align="right">
+				<p>
+		<button ng-click="reviewDataMove(m.Title,m.Poster)" class="btn btn-link">Review & Rate</a>
+</p>
+	</div>
+
+		</div>
+
+		<button ng-click="timeTable(m.Title,m.Poster)" class="btn btn-primary btn-block" style="width:255px;">BOOK NOW</button> -->
+	</div>
+
+			</div>
+
+		</div>

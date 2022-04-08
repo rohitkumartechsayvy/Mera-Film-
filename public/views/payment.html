@@ -1,0 +1,162 @@
+<div class="container">
+  <br><br><br>
+<div class="row">
+<div class="col-md-8">
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <h3 class="strip">
+      <p class="ppay">
+      Payment Options
+      </p>
+      </h3>
+
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h3 class="panel-title"><img class="pull-right" src="images/bank.png">Payment Details</h3>
+              </div>
+              <div class="panel-body">
+                  <form role="form" id="payment-form">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="p_name">Name</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="p_name" placeholder="Enter Name" required autofocus ng-model="pmt.name" required="true"/>
+                                    <span class="input-group-addon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="email">Email ID</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Valid Email" required autofocus data-stripe="number" ng-model="pmt.email" required="true"/>
+                                    <span class="input-group-addon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+<div class="row">
+<div class="col-xs-12">
+  <div class="form-group">
+    <label for="contact">Contact</label>
+      <div class="input-group">
+        <input type="tel" class="form-control" name="contact" placeholder="Valid Phone No" required autofocus data-stripe="number" ng-model="pmt.contact" min="10"/>
+        <span class="input-group-addon"></span>
+    </div>
+  </div>
+</div>
+</div>
+
+
+                      <div class="row">
+                          <div class="col-xs-12">
+                              <div class="form-group">
+                                  <label for="cardNumber">CARD NUMBER</label>
+                                  <div class="input-group">
+                                      <input type="text" class="form-control" name="cardNumber" placeholder="Valid Card Number" required="true"  autofocus data-stripe="number"  min="16" max="16" id="pmt.cardNumber"/>
+                                      <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group text-left">
+                                <center>    <label for="expMonth" >EXPIRATION DATE</label></center>
+                                    <div class="col-xs-6 col-lg-6 pl-ziro">
+                            <input type="text" class="form-control" name="expMonth" placeholder="MM" required data-stripe="exp_month" />
+                                    </div>
+                                    <div class="col-xs-6 col-lg-6 pl-ziro">
+                                        <input type="text" class="form-control" name="expYear" placeholder="YY" required data-stripe="exp_year" />
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="col-xs-5 col-md-5 pull-right">
+                              <div class="form-group">
+                                  <label for="cvCode">CV CODE</label>
+                                  <input type="password" class="form-control" name="cvCode" placeholder="CV" required data-stripe="cvc" />
+                              </div>
+                          </div>
+                      </div>
+                                                <div class="row">
+                          <div class="col-xs-12">
+                              <button class="btn btn-success btn-lg btn-block" type="submit" ng-click="confirmPage(pmt)">Submit</button>
+                          </div>
+                      </div>
+                      <div class="row" style="display:none;">
+                          <div class="col-xs-12">
+                              <p class="payment-errors"></p>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <h3 class="strip">
+    <p class="ppay">
+   ORDER SUMMARY
+ </p>
+</h3>
+<div class="well">
+<div class="table-responsive">
+<table class="table table-default">
+<tbody>
+      <tr>
+        <td id="mname">Movie Name</td>
+        <td>{{Moviename}}</td>
+        </tr>
+        <tr>
+          <td>Cinema Name</td>
+          <td id="cinema">{{CinemaName}}</td>
+          </tr>
+
+          <tr>
+            <td>Seat No</td>
+            <td id="seatno" width="1%" ng-repeat="m in TotalSeat1" >{{m}}</td>
+            </tr>
+            <tr>
+              <td>Show Timings</td>
+              <td id="showtime">{{showTime}}</td>
+              </tr>
+              <tr>
+                <td>Total Tickets</td>
+                <td id="t_ticket">{{coutSeat}}</td>
+                </tr>
+                <tr>
+                  <td>Amount</td>
+                  <td id="amount">{{Amount}}</td>
+                  </tr>
+
+    </tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
